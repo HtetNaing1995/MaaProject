@@ -17,8 +17,7 @@
     </div>
 
     <div class="output-text-container" id="output-text-container">
-      <div class="output-text">
-          this is a test output
+      <div class="output-text" id="output-text">
       </div>
     </div>
     <img src="./img/cat.png" alt="" class="cat-pic">
@@ -27,12 +26,15 @@
   <script>
     const name_arr=["wah wah","sage","wah","esclusage"];
     const inp_container=document.getElementById("container");
+    const otp_text=document.getElementById("output-text");
     const otp_container=document.getElementById("output-text-container");
     document.getElementById("submit-btn").addEventListener("click",()=>{
         inp_container.classList.add("container-animation");
         otp_container.classList.add("output-text-container-animation");
-        const inp_text=document.getElementById("input").value.toLowerCase();
-        (name_arr.includes(inp_text))?console.log("it is mama"):console.log("it is not mama");
+        let inp_text=document.getElementById("input").value;
+        let inp_text_lower=inp_text.toLowerCase();
+        inp_text+=(name_arr.includes(inp_text_lower))?"<br>(You are Maa <3)":"";
+        otp_text.innerHTML="Hello "+inp_text;
     })
   </script>
 </html>
