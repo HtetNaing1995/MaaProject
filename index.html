@@ -13,7 +13,7 @@
         <input type="text" class="name-input" id="input" />
         <button type="submit" id="submit-btn" class="submit-btn">Confirm</button>
       </div>
-      <small class="side-note">- please enter a real name >< -</span>
+      <small class="side-note" id="side-note">- please enter a real name >< -</span>
     </div>
 
     <div class="output-text-container" id="output-text-container">
@@ -28,13 +28,18 @@
     const inp_container=document.getElementById("container");
     const otp_text=document.getElementById("output-text");
     const otp_container=document.getElementById("output-text-container");
+    const side_note=document.getElementById("side-note");
     document.getElementById("submit-btn").addEventListener("click",()=>{
+      let inp_text=document.getElementById("input").value;
+      if(inp_text.length<=0){
+        side_note.style="color:red;";
+      }else{
         inp_container.classList.add("container-animation");
         otp_container.classList.add("output-text-container-animation");
-        let inp_text=document.getElementById("input").value;
         let inp_text_lower=inp_text.toLowerCase();
         inp_text+=(name_arr.includes(inp_text_lower))?"<br>(You are Maa <3)":"";
         otp_text.innerHTML="Hello "+inp_text;
+      }
     })
   </script>
 </html>
