@@ -1,0 +1,136 @@
+:root {
+  --bg-color: #db9dc3;
+  --text-color: #a50b69;
+  --btn-color: #b73b87;
+  --sec-color: #63063f90;
+}
+
+body {
+  background-color: var(--bg-color);
+  box-sizing: border-box;
+  margin: 0;
+}
+
+* {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+  height: 100vh;
+  justify-content: center;
+}
+
+.container-animation {
+  animation: moveup 0.5s ease-in-out forwards;
+}
+
+@keyframes moveup {
+  75% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(-30%);
+    opacity: 0;
+  }
+}
+
+.side-note {
+  color: var(--sec-color);
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.top-header {
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+
+.name-input {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}
+
+.name-input:focus {
+  outline: none;
+}
+
+.output-text-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(22, 22, 22);
+  font-size: 18px;
+  width: 100%;
+  opacity: 0;
+  z-index: -1;
+}
+
+@keyframes showup {
+  100% {
+    opacity: 1;
+    font-size: 150%;
+  }
+}
+
+.output-text-container-animation {
+  animation: showup 0.5s ease-in-out forwards 0.2s;
+}
+
+.output-text {
+  padding: 0px 30px;
+  text-align: center;
+}
+
+.cat-pic {
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  top: 0;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+  animation: catmove 20s infinite linear;
+}
+
+@keyframes catmove {
+  0% {
+    transform: translateX(0%) rotateY(0deg);
+  }
+  50% {
+    transform: translateX(340%);
+  }
+  60% {
+    transform: translateX(340%) rotateY(180deg);
+  }
+  90% {
+    transform: rotateY(180deg) translateX(0%);
+  }
+}
+
+.rose-pic {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 20px;
+  filter: drop-shadow(0 0 2px white);
+}
+
+.submit-btn {
+  background-color: var(--btn-color);
+  font-weight: bold;
+  color: rgb(40, 40, 40);
+  padding: 5px 15px;
+  border-radius: 25px;
+  border: none;
+  box-shadow: 0px 2px 5px -3px black;
+}

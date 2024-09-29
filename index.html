@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container" id="container">
+      <h3 class="top-header">Who are you?</h3>
+      <div>
+        <input type="text" class="name-input" id="input" />
+        <button type="submit" id="submit-btn" class="submit-btn">Confirm</button>
+      </div>
+      <small class="side-note">- please enter a real name >< -</span>
+    </div>
+
+    <div class="output-text-container" id="output-text-container">
+      <div class="output-text">
+          this is a test output
+      </div>
+    </div>
+    <img src="./img/cat.png" alt="" class="cat-pic">
+    <img src="./img/rose.png" alt="" class="rose-pic">
+  </body>
+  <script>
+    const name_arr=["wah wah","sage","wah","esclusage"];
+    const inp_container=document.getElementById("container");
+    const otp_container=document.getElementById("output-text-container");
+    document.getElementById("submit-btn").addEventListener("click",()=>{
+        inp_container.classList.add("container-animation");
+        otp_container.classList.add("output-text-container-animation");
+        const inp_text=document.getElementById("input").value.toLowerCase();
+        (name_arr.includes(inp_text))?console.log("it is mama"):console.log("it is not mama");
+    })
+  </script>
+</html>
