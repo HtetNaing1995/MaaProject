@@ -37,6 +37,7 @@ body {
   100% {
     transform: translateY(-30%);
     opacity: 0;
+    display: none;
   }
 }
 
